@@ -1,0 +1,30 @@
+﻿@page
+@model Raime.Shop.Api.Pages.Account.RegisterModel
+@{
+}
+
+<h1>Sign up</h1>
+<div>
+    <form method="post">
+        <input asp-for="@Model.Form.ReturnUrl" type="hidden" />
+        <p>
+            <label>Username</label>
+            <input asp-for="@Model.Form.Username" />
+            <span asp-validation-for="@Model.Form.Username"></span>
+        </p>
+        <p>
+            <label>Password</label>
+            <input asp-for="@Model.Form.Password" />
+            <span asp-validation-for="@Model.Form.Password"></span>
+        </p>
+        <p>
+            <label>Confirm Password</label>
+            <input asp-for="@Model.Form.ConfirmPassword" />
+            <span asp-validation-for="@Model.Form.ConfirmPassword"></span>
+        </p>
+        <button type="submit">SignUp</button>
+    </form>
+    Already have a registered account?
+    <a asp-page="/Account/Login" asp-route-returnUrl="@Model.Form.ReturnUrl">Login</a>
+</div>
+
